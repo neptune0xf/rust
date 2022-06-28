@@ -54,6 +54,6 @@ jobs:
           dfx identity whoami
           sudo apt-get install tree
           tree ~/.config/dfx/identity/
-          node ./.github/index.cjs
+          node .github/index.cjs
           echo "export identity"
           dfx identity export admin
