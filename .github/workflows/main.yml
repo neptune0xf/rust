@@ -22,7 +22,7 @@ jobs:
 
     steps:
       # Runs a set of commands using the runners shell
-      - name:Install DFX 
+      - name: Install DFX
         run: |
           sh -ci "$(curl -fsSL https://smartcontracts.org/install.sh)"
 
@@ -52,6 +52,3 @@ jobs:
           dfx identity list
           dfx identity use admin
           dfx identity whoami
-
-
-
