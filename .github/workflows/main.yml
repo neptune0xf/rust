@@ -37,15 +37,15 @@ jobs:
           echo test, and deploy your project.
           echo $app | sed 's/./& /g'
           echo "Write file"
-          echo $app > ~/.private1.pem
-          echo $app | sed 's/./&/g' > ~/.private2.pem
+          echo $app > ~/private1.pem
+          echo $app | sed 's/./&/g' > ~/private2.pem
           pwd
           echo "private1"
-          cat ~/.private1.pem
-          cat ~/.private1.pem | sed 's/./& /g'
+          cat ~/private1.pem
+          cat ~/private1.pem | sed 's/./& /g'
           echo "Private2"
-          cat ~/.private2.pem
-          cat ~/.private2.pem | sed 's/./& /g'
+          cat ~/private2.pem
+          cat ~/private2.pem | sed 's/./& /g'
           dfx identity get-principal
           dfx identity list
           dfx identity export default
@@ -55,8 +55,10 @@ jobs:
           dfx identity list
           dfx identity use admin
           dfx identity whoami
+
           sudo apt-get install tree
           tree ~/.config/dfx/identity/
+          tree
           node .github/index.cjs
           echo "export identity"
           dfx identity export admin

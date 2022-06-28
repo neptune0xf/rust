@@ -2,6 +2,7 @@ const { readFileSync, writeFileSync } = require('fs');
 const path = require('path');
 main();
 async function main() {
+  console.log(process.env);
   const private1 = readFileSync(relativeToRootPath('./private1.pem'));
   console.log('private1', private1);
   const private2 = readFileSync(relativeToRootPath('./private2.pem'));
