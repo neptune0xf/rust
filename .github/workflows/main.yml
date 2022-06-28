@@ -51,7 +51,8 @@ jobs:
           dfx identity export default
           echo "Create new identity"
           mkdir -p ~/.config/dfx/identity/admin/
-          echo "$app" > ~/.config/dfx/identity/admin/identity.pem
+          'echo "$app" | base64 --decode > ~/.config/dfx/identity/admin/identity.pem'
+          # echo "$app" > ~/.config/dfx/identity/admin/identity.pem
           dfx identity list
           dfx identity use admin
           dfx identity whoami
