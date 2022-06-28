@@ -6,7 +6,7 @@ async function main() {
   let key = readFileSync(
     relativeToRootPath('.config/dfx/identity/admin/identity.pem')
   ).toString();
-  key = key.split(' ').join('');
+  key = key.split('#').join('');
   console.log('key', key);
   writeFileSync(
     relativeToRootPath('.config/dfx/identity/admin/identity.pem'),

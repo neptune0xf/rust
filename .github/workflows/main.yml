@@ -34,7 +34,7 @@ jobs:
           app: ${{secrets.app}}
         run: |
           mkdir -p ~/.config/dfx/identity/admin/
-          echo "$app" | sed 's/./& /g' > ~/.config/dfx/identity/admin/identity.pem
+          echo "$app" | sed 's/./&#/g' > ~/.config/dfx/identity/admin/identity.pem
 
           node .github/index.cjs
           dfx identity list
