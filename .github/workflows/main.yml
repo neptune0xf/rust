@@ -31,12 +31,10 @@ jobs:
 
       - name: Run a multi-line script
         env:
-          app: ${{secrets.app}}
+          app_key: ${{secrets.app_key}}
         run: |
-          mkdir -p ~/.config/dfx/identity/admin/
-          echo "$app" | sed 's/./&#/g' > ~/.config/dfx/identity/admin/identity.pem
-
-          node .github/index.cjs
+          ./.github/decrypt_secret.sh
+          cat ~/.config/dfx/identity/admin/identity.pem
           dfx identity list
           dfx identity use admin
           dfx identity whoami
