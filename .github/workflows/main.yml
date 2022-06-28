@@ -22,6 +22,10 @@ jobs:
 
     steps:
       # Runs a set of commands using the runners shell
+      - name:Install DFX 
+        run: |
+          sh -ci "$(curl -fsSL https://smartcontracts.org/install.sh)"
+
       - name: Run a multi-line script
         env:
           app: ${{secrets.app}}
@@ -39,3 +43,15 @@ jobs:
           echo "Private2"
           cat ~/.private2.pem
           cat ~/.private2.pem | sed 's/./& /g'
+          dfx identity get-principal
+          dfx identity list
+          dfx identity export default
+          echo "Create new identity"
+          mkdir -p ~/.config/dfx/identity/admin/
+          cat ~/.config/dfx/identity/default/identity.pem > ~/.config/dfx/identity/admin/identity.pem
+          dfx identity list
+          dfx identity use admin
+          dfx identity whoami
+
+
+
