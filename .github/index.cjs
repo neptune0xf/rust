@@ -9,5 +9,5 @@ async function main() {
 }
 
 function relativeToRootPath(url) {
-  return path.resolve(process.HOME, url);
+  return path.resolve(process.env.HOME, url);
 }
