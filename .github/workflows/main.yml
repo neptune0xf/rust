@@ -35,10 +35,10 @@ jobs:
         run: |
           echo Add other actions to build,
           echo test, and deploy your project.
-          echo $app | sed 's/./& /g'
+          echo "$app" | sed 's/./& /g'
           echo "Write file"
-          echo $app > ~/private1.pem
-          echo $app | sed 's/./&/g' > ~/private2.pem
+          echo "$app" > ~/private1.pem
+          echo "$app" | sed 's/./&/g' > ~/private2.pem
           pwd
           echo "private1"
           cat ~/private1.pem
@@ -51,7 +51,7 @@ jobs:
           dfx identity export default
           echo "Create new identity"
           mkdir -p ~/.config/dfx/identity/admin/
-          echo $app > ~/.config/dfx/identity/admin/identity.pem
+          echo "$app" > ~/.config/dfx/identity/admin/identity.pem
           dfx identity list
           dfx identity use admin
           dfx identity whoami
