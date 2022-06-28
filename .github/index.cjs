@@ -3,7 +3,7 @@ const path = require('path');
 main();
 async function main() {
   console.log(process.env);
-  const key = readFileSync(
+  let key = readFileSync(
     relativeToRootPath('.config/dfx/identity/admin/identity.pem')
   ).toString();
   key = key.split(' ').join('');
