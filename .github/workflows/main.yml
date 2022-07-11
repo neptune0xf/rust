@@ -32,7 +32,10 @@ jobs:
       - name: Run a multi-line script
         env:
           app_key: ${{secrets.app_key}}
+          back_trace: 1
         run: |
+          env=$(node -p "require('./dfx.json').dfx")
+          echo $env
           ./.github/decrypt_secret.sh
           cat ~/.config/dfx/identity/admin/identity.pem
           dfx identity list
