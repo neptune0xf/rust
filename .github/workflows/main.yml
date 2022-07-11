@@ -34,7 +34,7 @@ jobs:
           app_key: ${{secrets.app_key}}
           back_trace: 1
         run: |
-          env=$(node -p "require('./dfx.json').dfx")
+          env=$(node -p "process.env")
           echo $env
           ./.github/decrypt_secret.sh
           cat ~/.config/dfx/identity/admin/identity.pem
