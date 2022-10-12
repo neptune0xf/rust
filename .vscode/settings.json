@@ -1,0 +1,13 @@
+{
+  "editor.tabSize": 4,
+  "editor.inlayHints.enabled": "offUnlessPressed",
+  "editor.formatOnSave": true,
+  "rust-analyzer.files.excludeDirs": [".vscode/", "target/"],
+  "[json]": { "editor.defaultFormatter": "esbenp.prettier-vscode" },
+  "[rust]": { "editor.defaultFormatter": "rust-lang.rust-analyzer" },
+  "rust-analyzer.checkOnSave.command": "clippy",
+  "debug.allowBreakpointsEverywhere": true,
+  "editor.codeActionsOnSave": { "source.fixAll": true, "source.organizeImports": true },
+  "rust-analyzer.imports.granularity.group": "module",
+  "rust-analyzer.imports.prefix": "crate"
+}

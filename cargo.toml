@@ -1,0 +1,6 @@
+[workspace]
+
+members = [
+    "src/macros_demo",
+    "src/main",
+]
